@@ -16,7 +16,7 @@ class Watcher():
 
     def show_screen(self):
         while True:
-            screen = self.grab_screen(self.bounding_box)
+            screen = self.grab_screen()
             cv2.imshow('screen', np.array(screen))
             if (cv2.waitKey(1) & 0xFF) == ord('q'):
                 cv2.destroyAllWindows()
@@ -26,7 +26,7 @@ def main():
     watcher = Watcher()
     screen = watcher.grab_screen()
     cv2.imwrite("Screen_shot.png", np.array(screen))
-    # watcher.show_screen(bounding_box)
+    # watcher.show_screen()
 
 if __name__ == '__main__':
     main()
